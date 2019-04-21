@@ -62,7 +62,7 @@ https://dotstud.io/blog/developed-iot-using-moddable/ <br>
 
 --
 
-## 昔のネタの焼き直し
+## 🙇‍昔のネタの焼き直し🙇‍
 <div style="position:relative; width:60%; margin-left: 20%">
   <img style="width: 100%" src="./assets/kanaianzen_system.png"/>
   <img style="width: 20%; position: absolute; top: 0; right: 20px" src="./assets/kanaianzen.png"/>
