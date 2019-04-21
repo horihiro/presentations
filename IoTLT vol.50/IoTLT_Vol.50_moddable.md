@@ -17,7 +17,7 @@ transition : "default"
   }
 </style>
 
-# Moddableで<br>簡単IoT
+# Moddableで<br>Javascript IoT
 🎉 IoTLT vol.50 🎉
 <br>@ DEJIMA
 
