@@ -1,4 +1,7 @@
 
+# Moddableで<br>Javascript IoT
+🎉 IoTLT vol.50 🎉
+<br>@ DEJIMA
 <style>
   .slides {
     width: 100% !important;
@@ -13,9 +16,6 @@
   }
 </style>
 
-# Moddableで<br>簡単IoT
-🎉 IoTLT vol.50 🎉
-<br>@ DEJIMA
 
 <div style="position:fixed; right:0; bottom:0; font-size: large; margin: 15px;"> powered by reveal.js/vscode-reveal</div>
 
@@ -26,12 +26,14 @@
   - ほりひろ<br><img src="./assets/main_avatar.jpg">
 - 職業
   - Azure (PaaS製品)のサポートエンジニア
-  - "dotstudio の技術顧問" (なにも役立ててない...)
+  - 『dotstudio 技術顧問』(を名乗っていいんですよね？)<br>
+    \# なお実績
 
 ---
 
 ## ちなみに
-今回は vscode-reveal でスライド作ってみました。
+今回は vscode-reveal でスライド作って<br>
+Visuals Studio Code で発表します
 
 ---
 
@@ -49,8 +51,8 @@
 
 ## dotstudio でブログ書いた
 https://dotstud.io/blog/developed-iot-using-moddable/ <br>
-<img style="width: 50%" src="./assets/moddable_at_dotstudio.png">
-
+<img style="width: 50%" src="./assets/moddable_at_dotstudio.png"><br>
+<span style="font-size: smaller; color: darkgray">\# 最初で最新の技術顧問業</span>
 
 ---
 
@@ -58,12 +60,12 @@ https://dotstud.io/blog/developed-iot-using-moddable/ <br>
 
 --
 
-## 昔のネタの焼き直し
+## 🙇‍昔のネタの焼き直し🙇‍
 <div style="position:relative; width:60%; margin-left: 20%">
   <img style="width: 100%" src="./assets/kanaianzen_system.png"/>
   <img style="width: 20%; position: absolute; top: 0; right: 20px" src="./assets/kanaianzen.png"/>
 </div>
-を Moddable SDK で再実装してみた
+コレを Moddable SDK で再実装してみた
 
 ---
 
@@ -109,10 +111,10 @@ const scanner = new Scanner;
 
 ```
 const postBleAddress = () => {
-  setTimeout(() => { // <- polyfill
+  setTimeout(() => {
     const body = JSON.stringify(bleAddrList);
     // HTTP POST request
-    fetch(URL, {method: 'POST', body, ...}) // <- polyfill
+    fetch(URL, {method: 'POST', body, ...})
       .then(/* onSucceeded */).catch(/* onFailed */)
       .then(postBleAddress);
   }, INTERVAL);
@@ -123,7 +125,7 @@ postBleAddress();
 --
 
 ## この２つをくっつけて完成
-細かい制御は全く記述してない
+Wi-Fi と BLE の同時利用も気にしない
 
 --
 
@@ -132,11 +134,11 @@ postBleAddress();
 ---
 
 
-## 当然いいことばかりではなく<br>イケてない点も
+## でも注意点も結構ある
 
 ---
 
-# イケてない点<br>その１
+# 注意点<br>その１
 
 --
 
@@ -150,15 +152,14 @@ postBleAddress();
 
 --
 
-## 外部ツールのパスが決め打ち
+## 必要なツールのパスが決め打ち
 
-変えることは可能
-
-でも変え方は書いていない
+変えることはできるけど、<br>
+変え方は書いていないので、自己責任で。
 
 ---
 
-# イケてない点<br>その２
+# 注意点<br>その２
 
 --
 
@@ -166,19 +167,18 @@ postBleAddress();
 
 --
 
-## ⏳⏳5-10 分かかる⌛⌛
+## ⏳⏳5-10 分かかることも⌛⌛
 
 ---
 
-# イケてない点<br>その３
+# 注意点<br>その３
 
 --
 
-## クラス／オブジェクトが無い
-- ブラウザー／Node.js ではおなじみの。
-  - console
-  - XMLHttpRequest／fetch
-  - タイマー系 (setTimeout 等)
+## おなじみのクラス／オブジェクトが無い
+- console
+- XMLHttpRequest／fetch
+- タイマー系 (setTimeout 等)
 
 --
 
@@ -194,6 +194,8 @@ https://github.com/horihiro/moddable-polyfill<br>
 ---
 
 ## 興味がある方人がいましたら<br>情報交換しましょう
+公式リポジトリもやさしいです<br>
+https://github.com/Moddable-OpenSource/moddable
 
 ---
 
