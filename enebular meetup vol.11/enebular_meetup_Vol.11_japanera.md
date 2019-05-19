@@ -1,6 +1,6 @@
 ---
 theme : "black"
-transition : "default"
+transition: "zoom"
 ---
 
 # 夢を叶える<br> <font color="gray">~~IoT~~</font> enebular
@@ -81,7 +81,7 @@ https://iotlt.connpass.com/event/128933/
 
 ---
 
-# 新元号発表会見<br>ツールを作った
+# 新元号ガチャ<br>ツールを作った
 
 --
 
@@ -90,13 +90,18 @@ https://iotlt.connpass.com/event/128933/
 --
 
 # 元号発表ごっこ
+<img src="./assets/design.png" style="width:50%; height:50%; border:0;">
 
 --
 
 # つまり
 - 漢字二文字をランダムに生成
-- 元号発表<font style="color: #ff7777">ぽい</font>に筆文字で描画
+- 元号発表<font style="color: #ff7777; font-width: bold">ぽい</font>に筆文字で描画
 - 出典も確認可能
+
+--
+
+# 元号発表ごっこ
 
 ---
 
@@ -105,12 +110,12 @@ https://iotlt.connpass.com/event/128933/
 - enebular
 - Web書道.com 
 - 適度なサイズのタブレット (今回は iPad)
-- 全力コーディングのやる気
+- やる気
 
 --
 
 # 出典情報
-<iframe src="https://create-japan-newera.herokuapp.com/era-meta" style="background: white; width: 100%; height: 400px;"/>
+<iframe src="https://create-japan-newera.herokuapp.com/era-meta" style="background: white; width: 80%; height: 400px;"/>
 
 ---
 
