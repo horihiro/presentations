@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Japan Era</title>
+  <style>
+    /* @import url(http://fonts.googleapis.com/earlyaccess/notosansjapanese.css);
+      body{
+        font-size: 18px;
+        font-family: 'Noto Sans Japanese', sans-serif;
+        text-align: center;
+        background-color: #fafafa;
+      }
+      .era_char {
+        font-size: 26em;
+        font-family: serif;
+      }
+      .era_char_1st {
+        margin-top: -0.25em;
+      }
+      .era_char_2nd {
+        margin-top: -0.5em;
+      } */
+    body {
+      width: 100%;
+      height: 100%;
+    }
+    .japan_era {
+      width: 100%;
+      height: 100%;
+    }
+  </style>
+</head>
+<body>
+  <link rel="stylesheet" href="https://s3-ap-northeast-1.amazonaws.com/enebular-infomotion/1.0.34/infomotion.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://cdn.mlkcca.com/v2.0.0/milkcocoa.js"></script>
+  <script src="https://s3-ap-northeast-1.amazonaws.com/enebular-infomotion/1.0.34/infomotion.js"></script>
+  <script src="https://s3-ap-northeast-1.amazonaws.com/enebular-infomotion/1.0.34/infomotionUI.js"></script>
+  <style>
+    .container {
+      /* padding-right: 15px;
+      padding-left: 15px;
+      margin-right: auto;
+      margin-left: auto; */
+      width: 100%;
+      height: 100%;
+    }
+    .hover-bg-gradient:hover,
+    .hover-bg-gradient:focus {
+      background-color: #313131;
+    }
+    .hover-bg-gradient {
+      background-image: linear-gradient(45deg, rgba(81, 81, 81, 0) 0%, #000 100%);
+      background-color: #515151;
+    }
+    .bg-gradient {
+      background: linear-gradient(-10deg, #515151 0%, #000 100%);
+    }
+    .btn-dashboard-primary {
+      color: #ffffff;
+      font-weight: 300;
+      transition: background-color .2s ease-in;
+      transition-property: background-color, color;
+    }
+    .graph-date-picker {
+      text-align: right;
+      display: none;
+    }
+    .enebular-datepicker {
+      border-radius: 1px;
+      border: 1px solid #F2F3F4;
+      color: #646e6f;
+      font-weight: 300;
+      padding: 12px 17px;
+      width: 50%;
+    }
+    .graph-date-picker #datePicker {
+      padding: 8px 0 8px 8px;
+      width: 100%
+    }
+    .infomotion-timeline {
+      margin-top: 60px;
+    }
+    .action-control-wrapper {
+      width: 70px;
+      float: left;
+    }
+    .timeline-wrapper {
+      width: calc(100% - 70px);
+      float: left;
+      padding-top: 15px;
+      padding-right: 15px;
+    }
+    .control-live {
+      float: left;
+      width: 60px;
+      margin-top: 62px;
+      display: none;
+    }
+    .control-timeline {
+      width: calc(100% - 60px);
+      float: left;
+      display: none;
+    }
+    .infomotion-graph-0 {
+      /* width: 600px;
+      height: 400px; */
+      width: 100%;
+      height: 100%;
+    }
+    /* @media (max-width: 768px) {
+      .infomotion-graph {
+        width: 100%;
+        transform: none;
+        position: inherit;
+        padding-bottom: 10px;
+      }
+    }
+    @media (min-width: 768px) {
+      .container {
+        width: 750px;
+      }
+    }
+    @media (min-width: 992px) {
+      .container {
+        width: 970px;
+      }
+    }
+    @media (min-width: 1200px) {
+      .container {
+        width: 1170px;
+      }
+    } */
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  </style>
+  <div class="container">
+    <div class="graph-date-picker">
+      <input id="enebularDatePicker" class="enebular-datepicker" type="date">
+    </div>
+    <div class="enebular-clear-both"></div>
+    <div class="control-live">
+      <button id="btnLive" class="enebular-btn">
+        <i class="fa fa-bolt fa-lg"></i>
+      </button>
+    </div>
+    <div class="control-timeline">
+      <div class="infomotion-timeline">
+        <div class="action-control-wrapper">
+          <button id="btnControl" class="enebular-btn enebular-btn-control hover-bg-gradient bg-gradient">
+            <i class="fa fa-play"></i>
+          </button>
+        </div>
+        <div class="timeline-wrapper" id="timeline"></div>
+        <div class="enebular-clear-both"></div>
+      </div>
+    </div>
+    <div class="enebular-clear-both"></div>
+    <div class="infomotion-graph infomotion-graph-0" id="graph0"></div>
+  </div>
+  <script>
+    var settings = {
+      "cache": "blackhole",
+      "dateRange": [new Date(1557376994278), new Date(1557636194278)],
+      "options": { "pluginPath": "https://enebular.com", "iframePath": "https://s3-ap-northeast-1.amazonaws.com/enebular-infomotion/1.0.28/iframe.html", "plugins": [{ "title": "japan-era-infotype", "name": "630534e5-0cd1-43de-b292-e5758c12b61b", "jsPath": "api/v1/infotype/630534e5-0cd1-43de-b292-e5758c12b61b/download?ext=js", "cssPath": "api/v1/infotype/630534e5-0cd1-43de-b292-e5758c12b61b/download?ext=css" }], "loadingMode": "loadScript" }
+    }
+    var graphContext = infomotion.graphContext(settings);
+    var datePicker = infomotionUI.datePicker(document.querySelector('#enebularDatePicker'))
+      .make();
+    var timeline = infomotionUI.timeline(
+      document.querySelector('#timeline'),
+      document.querySelector('#btnControl')
+    ).setTheme('black').make();
+    var liveButton = infomotionUI.liveButton(document.querySelector('#btnLive'))
+      .make();
+    graphContext
+      .useTimeline(timeline)
+      .useLiveButton(liveButton)
+      .useDatePicker(datePicker)
+    var settingGraph0 = { "adapter": { "type": "firebase", "options": { "firebase": { "apiKey": "AIzaSyDouhj97k73IEGRqA4GAbU2YA3nB3BHQQk", "authDomain": "japan-era.firebaseapp.com", "databaseURL": "https://japan-era.firebaseio.com/", "projectId": "japan-era", "storageBucket": "japan-era.appspot.com", "messagingSenderId": "549472261362" }, "ref": "/", "limit": "1" } }, "graph": { "i": "47f50137-e99e-4394-b424-3ef4cba39966", "n": "japan-era", "t": "630534e5-0cd1-43de-b292-e5758c12b61b", "d": "964f2b08-b6c5-4079-aa89-4611685083b2", "s": { "columnA": "country", "columnB": "value" }, "v": [] }, "options": { "pluginPath": "https://enebular.com", "iframePath": "https://s3-ap-northeast-1.amazonaws.com/enebular-infomotion/1.0.28/iframe.html", "plugins": [{ "title": "japan-era-infotype", "name": "630534e5-0cd1-43de-b292-e5758c12b61b", "jsPath": "api/v1/infotype/630534e5-0cd1-43de-b292-e5758c12b61b/download?ext=js", "cssPath": "api/v1/infotype/630534e5-0cd1-43de-b292-e5758c12b61b/download?ext=css" }], "loadingMode": "loadScript" } }
+    var graph0 = infomotionUI.graph(document.querySelector('#graph0'), settingGraph0);
+    graph0.render();
+    graphContext.useGraphs(graph0);
+    graph0.useFilter([])
+    setTimeout(()=> {
+      liveButton.element.click();
+    }, 1000);
+  </script>
+    <!-- <div class="era_char era_char_1st">令</div>
+    <div class="era_char era_char_2nd">和</div> -->
+    <!-- <img class="japan_era" src="http://web-shodo.com/shodo_img/user/shodo_4ed7284ffe493d08d890ffb2576a6ced.jpg"/>
+    <script>
+      (function () {
+        let updating = true;
+        const img = document.getElementById('era_image');
+        const url = 'https://japanerafunc.azurewebsites.net/api/CreateJapanEra?code=qNaldXKCdSnCKeSvK46adHlV2GvtVAMp5CmR4wJIyA9aRDkMEHrpvg==';
+        window.addEventListener("devicemotion", (e) => {
+          // img.src = '//:0';
+          var acc_g = e.accelerationIncludingGravity;
+          if (acc_g.z > 8 && !updating) {
+            updating = true;
+            document.body.style.backgroundColor = '#000';
+            img.src = '//:0';
+            fetch(url, { mode: 'cors', headers: { accept: 'application/json' } })
+              .then(r => r.json())
+              .then((j) => {
+                img.src = `${j.url}?${Date.now()}`;
+              })
+              .catch((e) => {
+                window.alert(e);
+              });
+          } else if (acc_g.z <= 5) {
+            updating = false;
+            document.body.style.backgroundColor = '#fafafa';
+          }
+        });
+      })();
+    </script> -->
+  </body>
+</html>
