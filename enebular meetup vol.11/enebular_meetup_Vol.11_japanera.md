@@ -35,7 +35,7 @@ transition: "zoom"
 
 ---
 
-# 早速いいわけ
+## 早速いいわけ
 
 --
 
@@ -81,7 +81,7 @@ https://iotlt.connpass.com/event/128933/
 
 ---
 
-# 新元号ガチャ<br>ツールを作った
+# 新元号発表ガチャ<br>ツールを作った
 
 --
 
@@ -89,32 +89,34 @@ https://iotlt.connpass.com/event/128933/
 
 --
 
-# 元号発表ごっこ
+## 元号発表ごっこ
 <img src="./assets/design.png" style="width:50%; height:50%; border:0;">
 
 --
 
-# つまり
+## つまり
 - 漢字二文字をランダムに生成
 - 元号発表<font style="color: #ff7777; font-width: bold">ぽい</font>に筆文字で描画
 - 出典も確認可能
 
---
-
-# 元号発表ごっこ
-
 ---
 
-# 材料
+## 材料
 
-- enebular
-- Web書道.com 
-- 適度なサイズのタブレット (今回は iPad)
-- やる気
+<section>
+<ul>
+  <li><p class="fragment fade-in"><img src="https://enebular.com/favicon.ico" style="border: none; margin: 0px 4px -5px 0px;background: rgba(255,255,255,0)">enebular</p></li>
+  <li><p class="fragment fade-in"><img src="https://www.gstatic.com/devrel-devsite/v0c74e6a7a755f75df39dc9a7dc5197ded60c6c2abf3c8fbd17a4917b5c78a143/firebase/images/favicon.png" style="border: none; margin: 0px 4px -5px 0px;background: rgba(255,255,255,0)">Firebase</p></li>
+  <li><p class="fragment fade-in">️️️️<img src="https://images.emojiterra.com/google/android-pie/128px/1f58c.png"  style="width: 32px;border: none; margin: 0px 4px -5px 0px;background: rgba(255,255,255,0)">Web書道.com</p></li>
+  <li><p class="fragment fade-in">️️️️<img src="https://images.vexels.com/media/users/3/128862/isolated/preview/5b021d17fb3643d144434b4cc6c3a74c-tablet-flat-icon-by-vexels.png"  style="width: 32px;border: none; margin: 0px 4px -5px 0px;background: rgba(255,255,255,0)">タブレット (今回は iPad)</p></li>
+  <li><p class="fragment fade-in">💪やる気</p>
+      <p class="fragment fade-in" style="color: gray"># あれ、Azureがない</p></li>
+</ul>
+</section>
 
 --
 
-# 出典情報
+## ネタ元情報
 <iframe src="https://create-japan-newera.herokuapp.com/era-meta" style="background: white; width: 80%; height: 400px;"/>
 
 ---
@@ -130,22 +132,27 @@ https://iotlt.connpass.com/event/128933/
 
 --
 
-## 徹底的な enebular 縛り (その1)
-- ロジック
-  - enebular の function で実装
-
---
-
-## 徹底的な enebular 縛り (その1)
-- UI
-  - enebular の infomotion で実装<br>
-    -> enebular の function で HTML を配信
-
---
-
-## 徹底的な enebular 縛り (その1)
-
-<div style="text-align:center"><img src="./assets/flow-httpserve.png" style="width:80%"></div>    
+## 徹底的な enebular 縛り
+<section>
+<ul>
+  <li><p class="fragment fade-in">ロジック</p>
+    <ul>
+      <li>
+        <p class="fragment fade-in">enebular の function で実装</p>
+      </li>
+    </ul>
+  </li>
+  <li><p class="fragment fade-in">UI</p>
+    <ul>
+      <li>
+        <p class="fragment fade-in">enebular の infomotion で実装</p>
+        <p class="fragment fade-in">-> enebular の function で HTML を配信<br>
+        <img src="./assets/flow-httpserve.png" style="width:50%;position:absolute;bottom:-200px"></p>
+      </li>
+    </ul>
+  </li>
+</ul>
+</section>
 
 ---
 
