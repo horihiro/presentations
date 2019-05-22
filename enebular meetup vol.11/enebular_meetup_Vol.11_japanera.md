@@ -31,7 +31,7 @@ transition: "zoom"
 - 職業
   - Azure (PaaS製品)のサポートエンジニア
   - 『dotstudio 技術顧問』<br>
-    \# なお実績
+    \# この会社の技術顧問て、、、
 
 ---
 
@@ -50,6 +50,9 @@ https://iotlt.connpass.com/event/128933/
 
 # 全力で<br>コーディング<br>しました<br>🙇‍🙇‍🙇‍
 
+--
+
+# LT ツール／スタイル、<br>という点をお楽しみください
 
 ---
 
@@ -94,6 +97,15 @@ https://iotlt.connpass.com/event/128933/
 
 --
 
+## 作った元号の出典
+
+<section>
+<p class="fragment fade-in"> ↓ これは InfoMotion で作成</p>
+</section>
+<iframe src="https://create-japan-newera.herokuapp.com/era-meta" style="background: white; width: 80%; height: 400px;"/>
+
+--
+
 ## つまり
 - 漢字二文字をランダムに生成
 - 元号発表<font style="color: #ff7777; font-width: bold">ぽい</font>に筆文字で描画
@@ -109,15 +121,10 @@ https://iotlt.connpass.com/event/128933/
   <li><p class="fragment fade-in"><img src="https://www.gstatic.com/devrel-devsite/v0c74e6a7a755f75df39dc9a7dc5197ded60c6c2abf3c8fbd17a4917b5c78a143/firebase/images/favicon.png" style="border: none; margin: 0px 4px -5px 0px;background: rgba(255,255,255,0)">Firebase</p></li>
   <li><p class="fragment fade-in">️️️️<img src="https://images.emojiterra.com/google/android-pie/128px/1f58c.png"  style="width: 32px;border: none; margin: 0px 4px -5px 0px;background: rgba(255,255,255,0)">Web書道.com</p></li>
   <li><p class="fragment fade-in">️️️️<img src="https://images.vexels.com/media/users/3/128862/isolated/preview/5b021d17fb3643d144434b4cc6c3a74c-tablet-flat-icon-by-vexels.png"  style="width: 32px;border: none; margin: 0px 4px -5px 0px;background: rgba(255,255,255,0)">タブレット (今回は iPad)</p></li>
-  <li><p class="fragment fade-in">💪やる気</p>
+  <li><p class="fragment fade-in">💪やる気＆ゴリッゴリのコーディング</p>
       <p class="fragment fade-in" style="color: gray"># あれ、Azureがない</p></li>
 </ul>
 </section>
-
---
-
-## ネタ元情報
-<iframe src="https://create-japan-newera.herokuapp.com/era-meta" style="background: white; width: 80%; height: 400px;"/>
 
 ---
 
