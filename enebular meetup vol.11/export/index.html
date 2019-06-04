@@ -144,7 +144,7 @@ $"
     <script src="../../common/export/libs/reveal.js/3.7.0/lib/js/head.min.js"></script>
     <script src="../../common/export/libs/reveal.js/3.7.0/js/reveal.orig.js"></script>
 <!-- 
-    <script src="../../common/export/libs/jquery/2.2.4/jquery.min.js"></script> -->
+    <script src="libs/jquery/2.2.4/jquery.min.js"></script> -->
     <script>
 
         // More info https://github.com/hakimel/reveal.js#configuration
@@ -189,10 +189,11 @@ $"
 
             // More info https://github.com/hakimel/reveal.js#dependencies
             dependencies: [
-               // { src: '../../common/export/libs/reveal.js/3.7.0/lib/js/classList.js', condition: function () { return !document.body.classList; } },
+               // { src: 'libs/reveal.js/3.7.0/lib/js/classList.js', condition: function () { return !document.body.classList; } },
                 { src: '../../common/export/libs/reveal.js/3.7.0/plugin/markdown/marked.js', condition: function () { return !!document.querySelector('[data-markdown]'); } },
                 { src: '../../common/export/libs/reveal.js/3.7.0/plugin/markdown/markdown.js', condition: function () { return !!document.querySelector('[data-markdown]'); } },
-               // { src: '../../common/export/libs/reveal.js/3.7.0/plugin/highlight/highlight.js', async: true, callback: function () { hljs.initHighlightingOnLoad(); } },
+                { src: '../../common/export/libs/reveal.js/3.7.0/plugin/spotlight/spotlight.js', condition: function () { return !!document.querySelector('[data-markdown]'); } },
+               // { src: 'libs/reveal.js/3.7.0/plugin/highlight/highlight.js', async: true, callback: function () { hljs.initHighlightingOnLoad(); } },
                 
                 { src: '../../common/export/libs/reveal.js/3.7.0/plugin/search/search.js', async: true },
                 { src: '../../common/export/libs/reveal.js/3.7.0/plugin/zoom-js/zoom.js', async: true },
@@ -221,12 +222,14 @@ $"
                     RevealCodeFocus();
                   }
                 },
-                // { src: '../../common/export/libs/reveal.js/3.7.0/plugin/reveal-code-focus/highlight.pack.js' },
-                // { src: '../../common/export/libs/reveal.js/3.7.0/plugin/reveal-code-focus/reveal-code-focus.js', async: true, callback: function() { RevealCodeFocus(); } },
-               // {src: '../../common/export/libs/reveal.js/3.7.0/plugin/line-numbers/line-numbers.js'}
+                // { src: 'libs/reveal.js/3.7.0/plugin/reveal-code-focus/highlight.pack.js' },
+                // { src: 'libs/reveal.js/3.7.0/plugin/reveal-code-focus/reveal-code-focus.js', async: true, callback: function() { RevealCodeFocus(); } },
+               // {src: 'libs/reveal.js/3.7.0/plugin/line-numbers/line-numbers.js'}
             ]
             ,
             keyboard: {
+                83: function() { RevealSpotlight.toggleSpotlight() },
+                80: function() { RevealSpotlight.togglePresentationMode(); },
                 67: function () { RevealChalkboard.toggleNotesCanvas() },	// toggle notes canvas when 'c' is pressed
                 66: function () { RevealChalkboard.toggleChalkboard() },	// toggle chalkboard when 'b' is pressed
                 46: function () { RevealChalkboard.clear() },	// clear chalkboard when 'DEL' is pressed
@@ -234,7 +237,7 @@ $"
                 68: function () { RevealChalkboard.download() },	// downlad recorded chalkboard drawing when 'd' is pressed
             },
             math: {
-                mathjax: '../../common/export/libs/reveal.js/3.7.0/plugin/math/MathJax.js',
+                mathjax: 'libs/reveal.js/3.7.0/plugin/math/MathJax.js',
 					// mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js',
 					config: 'TeX-AMS_HTML-full'
 				},

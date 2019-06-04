@@ -192,6 +192,7 @@ $"
                // { src: 'libs/reveal.js/3.7.0/lib/js/classList.js', condition: function () { return !document.body.classList; } },
                 { src: '../../common/export/libs/reveal.js/3.7.0/plugin/markdown/marked.js', condition: function () { return !!document.querySelector('[data-markdown]'); } },
                 { src: '../../common/export/libs/reveal.js/3.7.0/plugin/markdown/markdown.js', condition: function () { return !!document.querySelector('[data-markdown]'); } },
+                { src: '../../common/export/libs/reveal.js/3.7.0/plugin/spotlight/spotlight.js', condition: function () { return !!document.querySelector('[data-markdown]'); } },
                // { src: 'libs/reveal.js/3.7.0/plugin/highlight/highlight.js', async: true, callback: function () { hljs.initHighlightingOnLoad(); } },
                 
                 { src: '../../common/export/libs/reveal.js/3.7.0/plugin/search/search.js', async: true },
@@ -227,6 +228,8 @@ $"
             ]
             ,
             keyboard: {
+                83: function() { RevealSpotlight.toggleSpotlight() },
+                80: function() { RevealSpotlight.togglePresentationMode(); },
                 67: function () { RevealChalkboard.toggleNotesCanvas() },	// toggle notes canvas when 'c' is pressed
                 66: function () { RevealChalkboard.toggleChalkboard() },	// toggle chalkboard when 'b' is pressed
                 46: function () { RevealChalkboard.clear() },	// clear chalkboard when 'DEL' is pressed
